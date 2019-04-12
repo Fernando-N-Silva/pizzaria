@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color = "warning">
+      <ion-buttons slot='start'>
+        <ion-back-button defaultHref="home">
+          </ion-back-button>
+         <ion-title><b class = "center">Pedidos</b></ion-title>
+       </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-label><b class = "cor5">Atendente</b></ion-label>
+    <ion-select placeholder="atendente" [(ngModel)]="atendente">
+      <ion-select-option value="João">João</ion-select-option>
+      <ion-select-option value="Mauro">Mauro</ion-select-option>
+      <ion-select-option value="Pedro">Pedro</ion-select-option>
+      <ion-select-option value="Flávio">Flávio</ion-select-option>
+    </ion-select><br>
+  
+    <ion-label><b class = "cor5">Mesa</b></ion-label>
+    <ion-select class ="cor4"placeholder="Mesa" [(ngModel)]="mesa">
+      <ion-select-option value="1">1</ion-select-option>
+      <ion-select-option value="2">2</ion-select-option>
+      <ion-select-option value="3">3</ion-select-option>
+      <ion-select-option value="4">4</ion-select-option>
+    </ion-select>
+
+<h2 class = "cor5">Pizzas</h2><br>
+     <ion-list>
+
+         <ion-item>
+            
+            <ion-label class = "fs">Calabresa ------- R$:19,90</ion-label>
+            <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q1"></ion-input>
+        
+          </ion-item>
+    
+        <ion-item>
+            
+            <ion-label class = "fs"> Mussarela ------- R$:21,90</ion-label>
+            <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q2"></ion-input>
+          
+        </ion-item>
+    
+        <ion-item>
+           
+          <ion-label class = "fs"> Portuguesa ------ R$:24,90</ion-label>
+          <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q3"></ion-input>
+          
+      </ion-item>
+      
+      <ion-item>
+         
+        <ion-label class = "fs"> Lombo ---------- R$:23,90</ion-label>
+        <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q4"></ion-input>
+        
+      </ion-item>
+    </ion-list>
+
+    <h2 class = "cor5">Bebidas</h2>
+    <ion-list >
+         <ion-item>
+            
+            <ion-label class = "fs">Suco Jarra 1L - R$ 12,00</ion-label>
+            <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q5"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+             
+            <ion-label class = "fs">Copo Suco 250Ml - R$ 5,00</ion-label>
+            <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q6"></ion-input>
+            
+        </ion-item>
+    
+        <ion-item>
+           
+          <ion-label class = "fs">Refrigerante Lata - R$ 4,50</ion-label>
+          <ion-input placeholder="Qtd.:" type="number"[(ngModel)] = "q7"></ion-input>
+          
+      </ion-item>
+      
+      <ion-item>
+         
+        <ion-label class = "fs">Refrigerante 2L - R$ 6,00</ion-label>
+        <ion-input placeholder="   Qtd.:" type="number"[(ngModel)] = "q8"></ion-input>
+        
+      </ion-item><br>
+
+    </ion-list>
+
+
+        <ion-button color ="danger" (click) = "somar()"><b class = "cor1">Enviar Pedido</b></ion-button><br><br>
+        
+        <b class = "cor2">Resumo do pedido:</b><br>
+        
+        <ion-label><b class = "cor3">Valor pedido: R$ </b><b class ="cor5">{{resultado.toFixed(2)}}</b></ion-label><br>
+        <ion-label><b class = "cor3">Atendente: </b><b class ="cor5">{{atendente}}</b></ion-label><br>
+        <ion-label><b class = "cor3">Mesa: </b><b class ="cor5"> {{mesa}}</b></ion-label>
+</ion-content>
