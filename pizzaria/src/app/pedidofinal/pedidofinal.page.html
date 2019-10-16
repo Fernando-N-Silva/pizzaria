@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="pedidos">
+      </ion-back-button>
+      <ion-title><b class="center">PedidosFinal</b></ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br><br><br><br>
+
+
+  <ion-label><b class="cor3">Atendente: </b><b class="cor5">{{atendente}}</b></ion-label><br><br>
+  <ion-label><b class="cor3">Mesa: </b><b class="cor5"> {{mesa}}</b></ion-label><br><br>
+  <ion-label><b class="cor3">Valor pedido: R$ </b><b class="cor5">{{resultado}}</b></ion-label><br><br><br><br><br><br>
+  
+  <ion-button>imprimir</ion-button>
+
+</ion-content>
+
+  <ion-footer>
+    <ion-button href="pedidos">pedidos</ion-button>
+    <ion-button href="home">Home</ion-button>
+  </ion-footer>

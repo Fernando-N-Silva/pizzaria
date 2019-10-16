@@ -8,7 +8,7 @@
       </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
     <ion-label><b class = "cor5">Atendente</b></ion-label>
     <ion-select placeholder="atendente" [(ngModel)]="atendente">
@@ -89,12 +89,14 @@
 
     </ion-list>
 
-
+    <ion-button color ="danger" (click) = "resumo()"><b class = "cor1">resumo Pedido</b></ion-button><br><br>
         <ion-button color ="danger" (click) = "somar()"><b class = "cor1">Enviar Pedido</b></ion-button><br><br>
+
         
         <b class = "cor2">Resumo do pedido:</b><br>
         
-        <ion-label><b class = "cor3">Valor pedido: R$ </b><b class ="cor5">{{resultado.toFixed(2)}}</b></ion-label><br>
-        <ion-label><b class = "cor3">Atendente: </b><b class ="cor5">{{atendente}}</b></ion-label><br>
-        <ion-label><b class = "cor3">Mesa: </b><b class ="cor5"> {{mesa}}</b></ion-label>
-</ion-content>
+        <ion-label><b class = "cor3">Valor pedido: R$ </b><b class ="cor5">{{ resumo2 }}</b></ion-label><br>
+        <ion-label><b class = "cor3">Atendente: </b><b class ="cor5">{{ atendente }}</b></ion-label><br>
+        <ion-label><b class = "cor3">Mesa: </b><b class ="cor5"> {{ mesa }}</b></ion-label>
+
+      </ion-content>

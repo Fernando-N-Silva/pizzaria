@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { ValoresService } from '../valores.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -6,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pedidos.page.scss'],
 })
 export class PedidosPage implements OnInit {
+
   q1: number = 0;
   q2: number = 0;
   q3: number = 0;
@@ -30,13 +34,28 @@ export class PedidosPage implements OnInit {
   r6: number;
   r7: number;
   r8: number;
-  resultado:number;  //number = 0
+  resultado:any;  //number = 0
   atendente: string;
   mesa: number;
+  resumo2: any;
+
+  constructor(public route: Router,
+    public NavCtrl: NavController,
+    public valores: ValoresService) {}
+
+
   public somar() {
-    this.resultado = (this.r1 = (this.q1 * this.v1)) + (this.r2 = (this.q2 * this. v2)) + (this.r3 = (this.q3 * this. v3)) + (this.r4 = (this.q4 * this. v4)) + (this.r5 = (this.q5 * this. v5)) + (this.r6 = (this.q6 * this. v6)) + (this.r7 = (this.q7 * this. v7)) + (this.r8 = (this.q8 * this. v8));
+    this.resultado = (this.r1 = (this.q1 * this.v1)) + (this.r2 = (this.q2 * this. v2)) + (this.r3 = (this.q3 * this. v3)) + (this.r4 = (this.q4 * this. v4)) + (this.r5 = (this.q5 * this. v5)) + (this.r6 = (this.q6 * this. v6)) + (this.r7 = (this.q7 * this. v7)) + (this.r8 = (this.q8 * this. v8)).toFixed();
+    this.valores.setInfo(this.atendente);
+    this.valores.setInfo2(this.mesa);
+    this.valores.setInfo3(this.resultado);
+    this.NavCtrl.navigateForward('/pedidofinal');
   }
-  constructor() { }
+
+  public resumo(){
+    this.resumo2 = (this.r1 = (this.q1 * this.v1)) + (this.r2 = (this.q2 * this. v2)) + (this.r3 = (this.q3 * this. v3)) + (this.r4 = (this.q4 * this. v4)) + (this.r5 = (this.q5 * this. v5)) + (this.r6 = (this.q6 * this. v6)) + (this.r7 = (this.q7 * this. v7)) + (this.r8 = (this.q8 * this. v8)).toFixed();
+  
+  }
 
   ngOnInit() {
   }
